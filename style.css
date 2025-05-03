@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Black.woff2')format('woff2'), url('Roboto-Black.woff')format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+img {
+  width: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template: auto 1fr / auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+  padding: 20px;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: rgb(59, 146, 180);
+  color: rgb(242, 242, 242);
+}
+
+.sidebar > div {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar img {
+  padding-right: 15px;
+}
+
+.sidebar > .heading {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  font-size: 30px;
+}
+
+.header {
+  grid-area: header;
+  box-shadow: 2px 2px 5px grey;
+  z-index: 1;
+}
+
+.header > div {
+  display: grid;
+}
+
+.header > .top {
+  padding: 15px 20px 0 20px;
+  grid-template-columns: 1fr auto;
+  gap: 50px;
+  align-items: center;
+}
+
+.header > .top > .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header > .top > .left > input[type="search"] {
+  flex-grow: 1;
+  background-color: lightgrey;
+  border: none;
+  height: 20px;
+  border-radius: 15px;
+}
+
+.header > .top > .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.header > .top > .right > .profile-icon {
+  width: 40px;
+}
+
+.header > .bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 10px 20px;
+}
+
+.header > .bottom > .left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header > .bottom > .left > img {
+  width: 60px;
+}
+
+.header > .bottom > .left > .text {
+  font-weight: bold;
+}
+
+.header > .bottom > .left > .text > .text-bottom {
+  font-size: 25px;
+}
+
+.header > .bottom > .right {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.header > .bottom > .right > button {
+  color: white;
+  background-color: rgb(59, 146, 180);
+  border: none;
+  padding: 5px 0;
+  border-radius: 15px;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template: 1fr 1fr / 2fr 1fr;
+  grid-template-areas:
+    "projects announcements"
+    "projects trending";
+  padding: 20px;
+  gap: 20px;
+  background: rgb(236, 235, 235);
+}
+
+.main > div > .heading {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.main > .projects {
+  grid-area: projects;
+}
+
+.main > .projects > .project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.main > .projects > .project-container > .card {
+  background-color: white;
+  border-left: 5px solid orange;
+  padding: 25px 15px;
+  border-radius: 5px;
+}
+
+.main > .projects > .project-container > .card > .title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main > .projects > .project-container > .card > p {
+  color: grey;
+}
+
+.main > .projects > .project-container > .card > .icon-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.main > .announcements {
+  grid-area: announcements;
+}
+
+.main > .announcements > .announcement-container {
+  background-color: white;
+  padding: 30px;
+  display: grid;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+.main > .announcements > .announcement-container > .card > .title {
+  font-weight: bold;
+}
+
+.main > .announcements > .announcement-container > .card > p {
+  color: grey;
+}
+
+.main > .trending {
+  grid-area: trending;
+}
+
+.main > .trending > .trending-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.main > .trending > .trending-container > .card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main > .trending > .trending-container > .card > img {
+  width: 50px;
+}
